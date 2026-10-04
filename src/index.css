@@ -1,0 +1,477 @@
+:root {
+  font-family: Inter, 'Segoe UI', sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color: #0f172a;
+  background: #f8fafc;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f8fafc 0%, #eef2ff 100%);
+}
+
+button,
+input {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+.page-shell {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px 20px 60px;
+}
+
+.topbar {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(148, 163, 184, 0.25);
+  border-radius: 18px;
+  padding: 18px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.06);
+}
+
+.brand-wrap {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.brand-mark {
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(135deg, #4f46e5, #7c3aed);
+  color: white;
+  font-weight: 800;
+  font-size: 1.2rem;
+}
+
+.brand-badge {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+}
+
+.brand-wrap small {
+  display: block;
+  color: #64748b;
+}
+
+.login-btn {
+  background: #111827;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 18px;
+  font-weight: 700;
+}
+
+.hero-section {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 28px;
+  margin-top: 32px;
+  align-items: center;
+}
+
+.hero-copy,
+.login-panel,
+.book-card {
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  border-radius: 24px;
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.05);
+}
+
+.hero-copy {
+  padding: 42px 36px;
+}
+
+.eyebrow {
+  margin: 0 0 14px;
+  color: #4f46e5;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.hero-copy h1 {
+  margin: 0;
+  font-size: clamp(2.3rem, 5vw, 4rem);
+  line-height: 1.06;
+  color: #0f172a;
+}
+
+.hero-text {
+  margin-top: 18px;
+  color: #475569;
+  font-size: 1.05rem;
+  max-width: 560px;
+}
+
+.stats-row {
+  margin-top: 28px;
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+.stats-row div {
+  min-width: 120px;
+  background: #eef2ff;
+  border-radius: 14px;
+  padding: 16px 18px;
+}
+
+.stats-row strong,
+.stats-row span {
+  display: block;
+}
+
+.stats-row strong {
+  font-size: 1.4rem;
+  color: #111827;
+}
+
+.stats-row span {
+  margin-top: 4px;
+  color: #475569;
+  font-size: 0.8rem;
+}
+
+.login-panel {
+  padding: 30px 24px;
+}
+
+.login-panel h2 {
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.auth-mode-switch {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin-bottom: 20px;
+  padding: 5px;
+  background: #eef2ff;
+  border-radius: 12px;
+}
+
+.auth-mode-button {
+  border: 0;
+  border-radius: 9px;
+  padding: 10px;
+  color: #475569;
+  background: transparent;
+  font-weight: 700;
+}
+
+.auth-mode-button.active {
+  color: #312e81;
+  background: white;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.08);
+}
+
+.login-form label {
+  font-weight: 600;
+  color: #334155;
+}
+
+.login-form input {
+  border: 1px solid #cbd5e1;
+  border-radius: 12px;
+  padding: 12px 14px;
+  background: #f8fafc;
+}
+
+.password-hint {
+  margin-top: -8px;
+  color: #64748b;
+}
+
+.login-form button,
+.book-info button {
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #4f46e5, #7c3aed);
+  color: #fff;
+  font-weight: 700;
+  padding: 12px 16px;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.login-form button:hover,
+.book-info button:hover {
+  transform: translateY(-1px);
+}
+
+.login-form button:disabled,
+.login-btn:disabled,
+.panel-logout-btn:disabled {
+  cursor: wait;
+  opacity: 0.7;
+}
+
+.loggedin-box {
+  background: #ecfdf5;
+  border-radius: 12px;
+  padding: 18px 16px;
+  border: 1px solid #bbf7d0;
+}
+
+.loggedin-box p {
+  margin: 0 0 6px;
+  color: #166534;
+}
+
+.panel-logout-btn {
+  width: 100%;
+  margin-top: 16px;
+  padding: 10px 14px;
+  color: white;
+  background: #166534;
+  border: 0;
+  border-radius: 10px;
+  font-weight: 700;
+}
+
+.message-box {
+  margin-top: 16px;
+  background: #fef3c7;
+  color: #92400e;
+  border: 1px solid #fcd34d;
+  border-radius: 10px;
+  padding: 12px 14px;
+}
+
+.message-box.success {
+  color: #166534;
+  background: #ecfdf5;
+  border-color: #bbf7d0;
+}
+
+.message-box.error {
+  color: #991b1b;
+  background: #fef2f2;
+  border-color: #fecaca;
+}
+
+.books-section {
+  margin-top: 42px;
+}
+
+.library-section {
+  margin-top: 42px;
+  padding: 28px;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  border-radius: 24px;
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.05);
+}
+
+.library-section .eyebrow {
+  margin-bottom: 6px;
+}
+
+.library-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.library-book {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px;
+  border: 1px solid #dbeafe;
+  border-radius: 14px;
+  background: #f8fafc;
+}
+
+.library-book-mark {
+  display: grid;
+  flex: 0 0 34px;
+  width: 34px;
+  height: 34px;
+  place-items: center;
+  color: white;
+  background: #16a34a;
+  border-radius: 10px;
+  font-weight: 800;
+}
+
+.library-book h3,
+.library-book p {
+  margin: 0;
+}
+
+.library-book h3 {
+  font-size: 1rem;
+}
+
+.library-book p {
+  margin-top: 3px;
+  color: #64748b;
+  font-size: 0.82rem;
+}
+
+.availability-label {
+  margin-left: auto;
+  color: #15803d;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.section-header h2 {
+  margin: 0;
+  font-size: 2rem;
+}
+
+.section-header span {
+  color: #64748b;
+}
+
+.books-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(180px, 1fr));
+  gap: 20px;
+}
+
+.book-card {
+  overflow: hidden;
+}
+
+.book-cover {
+  height: 180px;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(135deg, #0f172a 0%, #4f46e5 100%);
+  color: white;
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+.book-info {
+  padding: 18px 16px 20px;
+}
+
+.book-category {
+  margin: 0 0 8px;
+  color: #7c3aed;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.book-info h3 {
+  margin: 0;
+  font-size: 1.3rem;
+}
+
+.book-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  margin: 16px 0;
+}
+
+.book-meta strong {
+  color: #0f172a;
+  font-size: 1.1rem;
+}
+
+.book-meta span {
+  color: #64748b;
+  font-size: 0.75rem;
+}
+
+.book-info button {
+  width: 100%;
+}
+
+.book-info button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+@media (max-width: 1000px) {
+  .books-grid {
+    grid-template-columns: repeat(2, minmax(220px, 1fr));
+  }
+
+  .hero-section {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .page-shell {
+    padding: 16px 14px 40px;
+  }
+
+  .topbar,
+  .section-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .books-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .library-section {
+    padding: 20px 16px;
+  }
+
+  .library-grid {
+    grid-template-columns: 1fr;
+  }
+}
